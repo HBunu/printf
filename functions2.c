@@ -1,5 +1,4 @@
 #include "main.h"
-
 /****************** PRINT POINTER ******************/
 /**
  * print_pointer - Prints the value of a pointer variable
@@ -51,7 +50,6 @@ int print_pointer(va_list types, char buffer[],
 	return (write_pointer(buffer, ind, length,
 		width, flags, padd, extra_c, padd_start));
 }
-
 /************************* PRINT NON PRINTABLE *************************/
 /**
  * print_non_printable - Prints ascii codes in hexa of non printable chars
@@ -67,6 +65,7 @@ int print_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int i = 0, offset = 0;
+
 	char *str = va_arg(types, char *);
 
 	UNUSED(flags);
@@ -91,7 +90,6 @@ int print_non_printable(va_list types, char buffer[],
 
 	return (write(1, buffer, i + offset));
 }
-
 /************************* PRINT REVERSE *************************/
 /**
  * print_reverse - Prints reverse string.
@@ -103,18 +101,18 @@ int print_non_printable(va_list types, char buffer[],
  * @size: Size specifier
  * Return: Numbers of chars printed
  */
-
 int print_reverse(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
+
 	char *str;
+
 	int i, count = 0;
 
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
 	UNUSED(size);
-
 	str = va_arg(types, char *);
 
 	if (str == NULL)
@@ -152,8 +150,11 @@ int print_rot13string(va_list types, char buffer[],
 	char x;
 	char *str;
 	unsigned int i, j;
+
 	int count = 0;
+
 	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
 	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	str = va_arg(types, char *);
